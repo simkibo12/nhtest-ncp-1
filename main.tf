@@ -13,7 +13,7 @@ data "ncloud_vpc" "test" {
 
 # subnet portal에서 가져오기
 data "ncloud_subnet" "test" {
-  name = var.subnet_name
+  id = var.subnet_id
   vpc_no = data.ncloud_vpc.test.vpc_no
 }
 
