@@ -78,7 +78,8 @@ data "ncloud_server_product" "product" {
 
 resource "ncloud_server" "server" {
   for_each = var.server
-  subnet_no = data.ncloud_subnet.test.id
+  vpc_no = data.ncloud_vpc.test.vpc_no
+  subnet = data.ncloud_subnet.test.id
   name = each.value.server_name
   login_key_name = each.value.login_key_name
   
