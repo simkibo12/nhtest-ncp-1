@@ -9,6 +9,7 @@ variable "server" {
     type = map(object({
         server_name = string
         login_key_name = string
+        acg_name    = string
         //server_image_product_code = string
     }))
 }
