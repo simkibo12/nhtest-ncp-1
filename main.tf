@@ -14,14 +14,14 @@ data "ncloud_vpc" "test" {
 # subnet portal에서 가져오기
 data "ncloud_subnet" "test" {
   name = var.subnet_name
-  vpc_no = ncloud_vpc.test.vpc_no
+  vpc_no = data.ncloud_vpc.test.vpc_no
 }
 
 # subnet portal에서 가져오기
 data "ncloud_access_control_group" "test" {
   for_each = var.server
   name = each.value.acg_name
-  vpc_no = ncloud_vpc.test.vpc_no
+  vpc_no = data.ncloud_vpc.test.vpc_no
 }
 
 
