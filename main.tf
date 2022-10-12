@@ -109,6 +109,7 @@ resource "ncloud_public_ip" "public_ip" {
 
 resource "ncloud_block_storage" "storage" {
   for_each = var.server_storage
+  stop_instance_before_detaching = var.stop_instance_before_detaching 
   server_instance_no = ncloud_server.server[each.value.server_key].id
   name = each.value.storage_name
   size = each.value.disk_size
